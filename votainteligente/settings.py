@@ -188,7 +188,7 @@ CONSTANCE_CONFIG = {
     'NAV_BAR': ('profiles, questionary, soulmate, facetoface, ask, ranking', 'Menu de navegacion'),
     'NAV_BAR_VOTITA_DISPLAYED': (False, 'Desplegamos el navbar del votita??????'),
     'SHOW_RIBBON_IN_CANDIDATE': (False, u"Debería aparecerles la franja roja que dice 'No se ha compormetido?'"),
-    'SHOW_ALL_CANDIDATES_IN_THIS_ORDER': ("", u"Mostrar todos los candidatos en la parte de /candidatos? "),
+    'SHOW_ALL_CANDIDATES_IN_THIS_ORDER': ("Prefecto,Concejal", u"Mostrar todos los candidatos en la parte de /candidatos? "),
     'CAN_CREATE_TEST_PROPOSAL': (False, u'Se pueden crear propuestas de prueba?'),
     'SEARCH_SUBSCRIPTION_ENABLED': (True, u'Suscribirse a una búsqueda está habilitado? esto sólo esconde los links.'),
     'WEBSITE_METADATA_AUTHOR': ('', 'Nombre del autor'),
@@ -442,10 +442,23 @@ WSGI_APPLICATION = 'votainteligente.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           # 'ENGINE':'django.db.backends.mysql',
+        'NAME': 'vota01',
+        'USER': 'odoo',
+#        'PASSWORD': 'cXpqiOitaBDnfXm5do',
+'PASSWORD':'Odoo19$',
+        'HOST': '127.0.0.1',
+        #'PORT': '5432',
     }
 }
 

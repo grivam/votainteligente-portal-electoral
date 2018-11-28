@@ -19,11 +19,34 @@
         {% block extra_nav %}
         {% endblock extra_nav %}
 
+
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="{% url 'que_es' %}" onclick="ga('send', 'event', 'nav-que-es', 'click')">{% trans "¿Qué es?" %}</a></li>
-                <li><a href="{% url 'popular_proposals:home' %}" onclick="ga('send', 'event', 'nav-conoce-propuestas', 'click')">{% trans "Propuestas ciudadanas" %}</a></li>
-                <li><a href="/" onclick="ga('send', 'event', 'nav-compromisos-pinera', 'click')">{% trans "Compromisos" %}</a></li>
+              <!--li><a href="{% url 'que_es' %}" onclick="ga('send', 'event', 'nav-que-es', 'click')">{% trans "¿sQué es?" %}</a></li-->
+                <!--li><a href="{% url 'popular_proposals:home' %}" onclick="ga('send', 'event', 'nav-conoce-propuestas', 'click')">{% trans "Propuestas ciudadanas" %}</a></li-->
+<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selecciona tu ciudad <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Ambato</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Cuenca</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Guayaquil</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Loja</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Portoviejo</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Quito</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Tena</a></li>
+                  </ul>
+</li>
+
+<li><a href="{% url 'know_your_candidates' %}" onclick="ga('send','event','breadcrumb-candidaturas-election','click')">{% trans "A quiénes elegimos" %}</a></li>
+
+                <!--li><a href="/" onclick="ga('send', 'event', 'nav-compromisos-pinera', 'click')">{% trans "Compromisos" %}</a></li-->
+<li><a href="{% url 'medianaranja2:index' %}">{% trans "Media Naranja" %}</a></li>
                 <li>
                     <a href="#" onclick="ga('send', 'event', 'nav-twitter-share', 'click'); window.open(&quot;//twitter.com/share?via=Ciudadanoi&hashtags={{ config.WEBSITE_TWITTER_HASHTAG }}&text={{ config.WEBSITE_TWITTER_TEXT }}&quot;,&quot;twitter&quot;,&quot;width=450, height=250&quot;)">
                       <span class="fa-stack fa-lg">

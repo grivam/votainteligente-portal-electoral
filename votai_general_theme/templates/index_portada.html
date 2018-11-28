@@ -1,0 +1,128 @@
+{% load staticfiles %}
+{% load votainteligente_extras %}
+{% load i18n %}
+{% load thumbnail %}
+{% load cache %}
+<section id="home-elected-candidate">
+  <div class="container text-center">
+    <h3>VOTO INFORMADO</h3>
+    <h2>Elecciones Seccionales</h2>
+  </div>
+</section>
+
+<section id="home-elected-candidate2">
+  <div class="vcontainer text-center row">
+      <div class="col-sm-6">
+        <iframe style="width:100%;height:auto" src="https://www.youtube.com/embed/nwEzgOSTlBE"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+
+        </iframe>
+    </div>
+
+      <div class="col-sm-6">
+          <p>¿Qué es voto informado?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua.</p>
+          <button>Más información</button>
+      </div>
+
+  </div>
+</section>
+
+
+
+<section id="home-elected-candidate2">
+  <div class="vcontainer text-center row">
+
+      <h2>¿De qué ciudad desea conocer los candidatos?</h2>
+
+      <hr style="height:50px;"/>
+
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/ambato.png"/>
+          <h4>Ambato</h4>
+      </div>
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/cuenca.png"/>
+          <h4>Cuenca</h4>
+      </div>
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/guayaquil.png"/>
+          <h4>Guayaquil</h4>
+      </div>
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/loja.png"/>
+          <h4>Loja</h4>
+      </div>
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/portoviejo.png"/>
+          <h4>Portoviejo</h4>
+      </div>
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/quito.png"/>
+          <h4>Quito</h4>
+      </div>
+      <div class="col-sm-3 escudo">
+          <img src="/static/img/tena.png"/>
+          <h4>Tena</h4>
+      </div>
+
+  </div>
+</section>
+
+
+
+
+<section id="home-elected-candidate2">
+  <div class="container text-center row">
+
+      <h2>¿Qué vamos a elegir?</h2>
+
+      <hr style="height:50px;"/>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+
+  </div>
+</section>
+
+
+<section class="media-naranja">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <img src="{% static 'img/logo-media-naranja.svg' %}" class="img-responsive" alt="Media Naranja Política">
+      <h2>{% trans "¿Con quién será tu cita en la segunda vuelta?" %}</h2>
+      <p>{% trans "La Media Naranja es un juego de preguntas para ver tu afinidad con las candidaturas que llegaron a la segunda vuelta presidencial de Chile. El contenido se basa en la información de los programas de gobierno de la candidaturas presidenciales, en los compromisos de las candidaturas con propuestas ciudadanas hechos en Vota Inteligente y en declaraciones hechas por los candidatos en medios de comunicación. Como cualquier juego, su resultado podría no coincidir con lo que crees." %}</p>
+    </div>
+    <div class="col-md-4 mano">
+    </div>
+  </div>
+
+</div>
+</section>
+
+  </div>
+
+</section>
+{% comment 'Liss querida acá van los compromisos, ve tu como los dibujas mejor' %}
+<section>
+    <div class="container text-center">
+    {% if important_candidate.commitments.count %}
+    <div id="grid">
+    	<div id="posts">
+    	{% for commitment in important_candidate.commitments.committed.all %}
+    		{{commitment.proposal.card}}
+    	{% endfor %}
+    	</div>
+    </div>
+
+    {% endif %}
+    </div>
+</section>
+{% endcomment %}

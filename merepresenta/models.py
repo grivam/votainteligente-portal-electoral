@@ -289,8 +289,8 @@ class Partido(models.Model):
     name = models.CharField(max_length=1024, null=True)
     initials = models.CharField(max_length=1024, null=True)
     number = models.CharField(max_length=1024, null=True)
-    mark = models.FloatField(null=True)
-    coaligacao = models.ForeignKey(Coaligacao, null=True)
+    mark = models.FloatField(null=True, blank=True)
+    coaligacao = models.ForeignKey(Coaligacao, null=True, blank=True)
 
 
 @python_2_unicode_compatible

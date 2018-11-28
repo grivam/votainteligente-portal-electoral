@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 from django.conf import settings
-from merepresenta.models import Candidate, CandidateQuestionCategory
+from merepresenta.models import Candidate, CandidateQuestionCategory, Partido
 from django.contrib.auth.models import User
 
 # Register your models here.
@@ -47,3 +47,10 @@ class CandidateQuestionCategoryAdmin(admin.ModelAdmin):
     search_fields = ['candidate__name',]
 
 admin.site.register(CandidateQuestionCategory, CandidateQuestionCategoryAdmin)
+
+
+
+class CandidatePartidoAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Partido, CandidatePartidoAdmin)

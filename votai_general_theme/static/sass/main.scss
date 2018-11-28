@@ -140,15 +140,38 @@ hr {
   color: $grey-one;
 }
 
+.profile2 {
+      margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.candidate-name {
+  text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  line-height: 2.5;
+}
+
+.candidate-position {
+  text-align: center;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+  line-height: 2.5;
+}
+
+
 .content_padding {
     padding-top: 40px;
     padding-bottom: 0;
     #info-candidato {
-      color: #233346;
+      color: white;
       a {
-        color: #233346;
+        color: white;
         &hover {
-          color: #233346;
+          color: white;
         }
       }
       .table>tbody>tr>td {
@@ -950,8 +973,10 @@ p.answer {
 /*Perfil candidato*/
 
 .profile {
-    background: $yellow;
+    background: rgb(0, 85, 0);
+  color: white;
 }
+
 
 .profile h1 {
     margin: -10px 0 20px;
@@ -2192,3 +2217,4 @@ Can this be done with Masonry options? */
 @import '2017sitio1';
 @import 'media-2017sitio1';
 @import 'media-print'
+

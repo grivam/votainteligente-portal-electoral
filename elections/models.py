@@ -182,6 +182,7 @@ class Candidate(Person, ExtraInfoMixin, OGPMixin, ShareableMixin):
     answered_first = HaveAnsweredFirst()
     ranking = RankingManager()
 
+
     ogp_enabled = True
 
     @property

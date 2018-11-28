@@ -57,6 +57,8 @@ class HelpFindingCandidates(ListView):
             qs = qs.filter(id__in=settings.PRIORITY_CANDIDATES)
         return qs
 
+
+
 class HomeView(BackendCandidateBase, RedirectView):
     template_name = "backend_candidate/home.html"
 
